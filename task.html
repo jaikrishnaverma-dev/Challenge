@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
     <!-- For String Question -------------------------------------------------------------------------------------------------------------- -->
     <div class="col-5 p-5 me-auto ms-auto " style="min-width: 600px;">
         <h1 class="text-info">String Question</h1>
@@ -25,19 +26,17 @@
         <h2 id="result" class="text-warning"></h2>
     </div>
     <hr>
-
-
-
     <!-- For date related 13 friday question -------------------------------------------------------------------------------------------------->
     <h1 class="text-info col-4 me-auto ms-auto">Date Question</h1>
     <div class="d-flex col-5 justify-content-center me-auto ms-auto" style="min-width: 600px;">
-        <input type="number" class="col-2 m-2 form-input rounded border" id="first" placeholder="from year">
-        <input type="number" class="col-2 m-2 form-input rounded border" id="last" placeholder="to year">
-        <button class="btn btn-info m-2" onclick="getFriday()">Get No. of 13 Fridays</button>
+        <input type="number" class="col-3 m-2 form-input rounded border" value="2022" id="first"
+            placeholder="from year">
+        <input type="number" class="col-3 m-2 form-input rounded border" value="2023" id="last" placeholder="to year">
+        <button class="btn btn-warning m-2" onclick="getFriday()">Get No. of 13 Fridays</button>
     </div>
-    <div class="bg-warning col-4 mt-4 ms-auto me-auto " style="min-width: 600px;" id="res2"></div>
+    <div class="bg-warning col-4 mt-4 ms-auto me-auto rounded" style="min-width: 600px;" id="res2"></div>
 
 </body>
-<script src="solutions.js"></script>
+<script src="task.js"></script>
 
 </html>

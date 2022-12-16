@@ -3,12 +3,7 @@
 let str='26y7 7r23 89b 23d5'
 str=str.split(" ")
 const regexp = /[A-z]/gi;
-str.sort((a,b)=>{
-  let sign =  (a.match(regexp)[0].toLowerCase()<b.match(regexp)[0].toLowerCase())?-1:1
-  a.replace(regexp, "")
-  b.replace(regexp, "");
-  return sign
-})
+str.sort((a,b)=>(a.match(regexp)[0].toLowerCase()<b.match(regexp)[0].toLowerCase())?-1:1)
 document.getElementById('result').innerText+=str.map(x=>x.replace(regexp, "")).join(" ")
 
 // ======================================= SOLUTION 2 DIVIDER =======================================================================================
@@ -24,7 +19,7 @@ function getFriday() {
     if (first && last) {
         document.getElementById('res2').innerHTML=""
        let dates= (first<last)?FindMonth(first, last):FindMonth(last,first)
-       dates.map(x=> document.getElementById('res2').innerHTML+='<div class="col-12 p-1">'+x+'</div>' )
+       dates.map(x=> document.getElementById('res2').innerHTML+='<div class="col-12 pt-2 pb-1 px-3">'+x+'</div>' )
     } else {
         alert("Enter all Inputs Please.")
     }

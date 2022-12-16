@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        min-width: 300px;
+        margin: 20px;
+    }
+    tr,td{
+        border: 1px solid red;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <h2>Question no.1 </h2>
+    <p>Ex: Given String is : let s = "PAYPALISHIRING" and diagonal n=4</p>
+    <p>convert it into: P,I,N,A,L,S,I,G,Y,A,H,R,P,I</p>
+    <h3>concept</h3>
+    <table>
+        <tr>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td>N</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td></td>
+            <td>L</td>
+            <td>S</td>
+            <td></td>
+            <td>I</td>
+            <td>G</td>
+        </tr>
+        <tr>
+            <td>Y</td>
+            <td>A</td>
+            <td></td>
+            <td>H</td>
+            <td>R</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>P</td>
+            <td></td>
+            <td></td>
+            <td>I</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+<script>
+    let s = "PAYPALISHIRING"
+
+    function fun(str, col) {
+        str = str.split('')
+        let arr = []
+        let cor = { x: 0, y: 0, type: "vertical" }
+        for (let row = 0; row < col; row++) {
+            arr.push([])
+        }
+        str.map(x => Pusher(x))
+        function Pusher(element) {
+            if (cor.type == "vertical") {
+                arr[cor.x][cor.y] = element
+                if (cor.x == col - 1) {
+                    cor.type = "diagonal"
+                    cor.x -= 1
+                    cor.y += 1
+                } else {
+                    cor.x += 1
+                }
+            } else if (cor.type == "diagonal") {
+                arr[cor.x][cor.y] = element
+                if (cor.x == 0) {
+                    cor.type = "vertical"
+                    cor.x += 1
+                } else {
+                    cor.x -= 1;
+                    cor.y += 1
+                }
+            }
+        }
+        return arr
+    }
+
+
+    console.log(fun(s, 4))
+</script>
+
+</html>
