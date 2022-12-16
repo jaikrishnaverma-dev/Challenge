@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Question Flatten </h2>
+    <p>Ex: Given Array is:  str=[3,[3,7],[7,[77,9,[0,9]]],9,0,[0]]</p>
+    <h3>Solution In console</h3>
+</body>
+<script>
+    let str=[3,[3,7],[7,[77,9,[0,9]]],9,0,[0]]
+
+function rec(arr,len,depth=1,index=0,temp=[]){
+  if(index==len || depth<1)
+  return temp;
+  (Array.isArray(arr[index]) && depth!=1)?rec(arr[index],arr[index].length,depth-1,0,temp):temp.push(arr[index])
+  return rec(arr,len,depth,index+1,temp)
+}
+console.log("given",str)
+console.log("solution: ",rec(str,str.length,4).toString());
+</script>
+</html>
