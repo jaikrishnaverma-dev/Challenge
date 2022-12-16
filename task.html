@@ -13,57 +13,31 @@
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
         integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Question</title>
 </head>
 
 <body>
+    <!-- For String Question -------------------------------------------------------------------------------------------------------------- -->
     <div class="col-5 p-5 me-auto ms-auto " style="min-width: 600px;">
         <h1 class="text-info">String Question</h1>
         <h3>String is: 26y7 7r23 89b 23d5</h3>
         <p>outupt given below</p>
-        <h2 id="result"></h2>
+        <h2 id="result" class="text-warning"></h2>
     </div>
     <hr>
 
-    <h1 class="text-info col-4 me-auto ms-auto">Date Question</h1>
 
+
+    <!-- For date related 13 friday question -------------------------------------------------------------------------------------------------->
+    <h1 class="text-info col-4 me-auto ms-auto">Date Question</h1>
     <div class="d-flex col-5 justify-content-center me-auto ms-auto" style="min-width: 600px;">
-        <input type="number" class="col-2 m-2 form-input rounded" value="2012" id="first" placeholder="from year">
-        <input type="number" class="col-2 m-2 form-input rounded" value="2022" id="last" placeholder="to year">
-        <button class="btn btn-info m-2" onclick="getFriday()">Get No. of Fridays</button>
+        <input type="number" class="col-2 m-2 form-input rounded border" id="first" placeholder="from year">
+        <input type="number" class="col-2 m-2 form-input rounded border" id="last" placeholder="to year">
+        <button class="btn btn-info m-2" onclick="getFriday()">Get No. of 13 Fridays</button>
     </div>
-    <div class="bg-warning col-4 mt-4 ms-auto me-auto p-3 rounded" style="min-width: 600px;" id="res2"></div>
+    <div class="bg-warning col-4 mt-4 ms-auto me-auto " style="min-width: 600px;" id="res2"></div>
 
 </body>
-<script>
-    var months = ["January", "February", "March", "April", "May", "June", "July","August", "September", "October", "November", "December"];
-    var day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    // for question two
-    function getFriday() {
-        let first = parseInt(document.getElementById('first').value)
-        let last = parseInt(document.getElementById('last').value)
-        console.log(first + "&&" + last)
-        if (first && last) {
-            document.getElementById('res2').innerText =(first<last)?JSON.stringify(traver(first, last)):JSON.stringify(traver(last,first))
-        } else {
-            alert("Enter all Input Please")
-        }
-    }
-
-    function traver(from, to, month = 0, arr = []) {
-        if (from > to)
-            return arr
-        let date = months[month] + " 13, " + from + " 23:15:00";
-        var dt = new Date(date);
-        if (day[dt.getDay()] == 'Friday')
-            arr.push({ year: from, month: months[month] })
-        if (month == 11)
-            return traver(from + 1, to, 0, arr)
-        else
-            return traver(from, to, month + 1, arr)
-
-    }
-</script>
+<script src="solutions.js"></script>
 
 </html>
