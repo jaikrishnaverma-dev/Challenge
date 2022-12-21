@@ -6,13 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        padding: 2%;
+    }
+
+</style>
 <body>
+<h2>Question:</h2>
+<p>design a fuction which takes two input n,k.
+ give n string and Find smallest string that contain all character of k.</p>
+<h3>For Example:</h3>
+<p>input:  n='anffaksfajeeubsne'  k='jefaa'</p>
+<p>output: 'aksfaj'</p>
     <script>
 
 console.log(Finder('anffaksfajeeubsne','jefaa'));
 
 function Finder(n,k,nindex=0,cor=[0,n.length]){
-    
+
     // run for first time only
     if(nindex==0){
         n=n.split('')
