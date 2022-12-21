@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+console.log(Finder('anffaksfajeeubsne','jefaa'));
+
+function Finder(n,k,nindex=0,cor=[0,n.length]){
+    
+    // run for first time only
+    if(nindex==0){
+        n=n.split('')
+        k=k.split('')
+    }
+
+    // return statement when traverse complete
+     if(nindex==n.length)
+     return n.slice(cor[0],cor[1]).join('')
+
+    // core logic
+    let pivote=[...k]
+    for(let i=nindex;i<n.length;i++){
+         if(pivote.indexOf(n[i])!==-1)
+         pivote.splice(pivote.indexOf(n[i]),1)
+         if(pivote.length==0){
+             if(i-nindex<cor[1]-cor[0]){
+                 cor[0]=nindex;
+                 cor[1]=i;
+             }
+             break;
+         }
+     }
+     return Finder(n,k,nindex+1,cor)
+}
+    </script>
+</body>
+</html>
